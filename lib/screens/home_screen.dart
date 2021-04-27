@@ -1,6 +1,6 @@
-import 'package:best_flutter_ui_templates/themes/app_theme.dart';
+import 'package:iuo_mobile_app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:best_flutter_ui_templates/models/homelist.dart';
+import 'package:iuo_mobile_app/models/homelist.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key key}) : super(key: key);

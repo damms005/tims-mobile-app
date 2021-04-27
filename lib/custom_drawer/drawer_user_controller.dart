@@ -1,5 +1,5 @@
-import 'package:best_flutter_ui_templates/themes/app_theme.dart';
-import 'package:best_flutter_ui_templates/custom_drawer/home_drawer.dart';
+import 'package:iuo_mobile_app/themes/app_theme.dart';
+import 'package:iuo_mobile_app/custom_drawer/home_drawer.dart';
 import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {

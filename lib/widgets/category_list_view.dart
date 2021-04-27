@@ -1,6 +1,6 @@
-import 'package:best_flutter_ui_templates/themes/design_course_app_theme.dart';
-import 'package:best_flutter_ui_templates/models/category.dart';
-import 'package:best_flutter_ui_templates/main.dart';
+import 'package:iuo_mobile_app/themes/design_course_app_theme.dart';
+import 'package:iuo_mobile_app/models/category.dart';
+import 'package:iuo_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatefulWidget {

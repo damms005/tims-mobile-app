@@ -1,4 +1,4 @@
-import 'package:best_flutter_ui_templates/screens/home_design_course.dart';
+import 'package:iuo_mobile_app/screens/home_design_course.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeList {

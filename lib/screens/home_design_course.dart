@@ -1,7 +1,7 @@
-import 'package:best_flutter_ui_templates/widgets/category_list_view.dart';
-import 'package:best_flutter_ui_templates/screens/course_info_screen.dart';
-import 'package:best_flutter_ui_templates/widgets/popular_course_list_view.dart';
-import 'package:best_flutter_ui_templates/main.dart';
+import 'package:iuo_mobile_app/widgets/category_list_view.dart';
+import 'package:iuo_mobile_app/screens/course_info_screen.dart';
+import 'package:iuo_mobile_app/widgets/popular_course_list_view.dart';
+import 'package:iuo_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 import '../themes/design_course_app_theme.dart';
 
