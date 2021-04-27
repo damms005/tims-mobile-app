@@ -4,22 +4,22 @@ import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({
-    Key key,
+    Key? key,
     this.drawerWidth = 250,
-    this.onDrawerCall,
-    this.screenView,
+    required this.onDrawerCall,
+    required this.screenView,
     this.animatedIconData = AnimatedIcons.arrow_menu,
     this.menuView,
     this.drawerIsOpen,
-    this.screenIndex,
+    this.screenIndex = DrawerIndex.HOME,
   }) : super(key: key);
 
   final double drawerWidth;
   final Function(DrawerIndex) onDrawerCall;
   final Widget screenView;
-  final Function(bool) drawerIsOpen;
+  final Function(bool)? drawerIsOpen;
   final AnimatedIconData animatedIconData;
-  final Widget menuView;
+  final Widget? menuView;
   final DrawerIndex screenIndex;
 
   @override
@@ -27,9 +27,9 @@ class DrawerUserController extends StatefulWidget {
 }
 
 class _DrawerUserControllerState extends State<DrawerUserController> with TickerProviderStateMixin {
-  ScrollController scrollController;
-  AnimationController iconAnimationController;
-  AnimationController animationController;
+  late ScrollController scrollController;
+  late AnimationController iconAnimationController;
+  late AnimationController animationController;
 
   double scrolloffset = 0.0;
 
@@ -46,7 +46,7 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
             setState(() {
               scrolloffset = 1.0;
               try {
-                widget.drawerIsOpen(true);
+                widget.drawerIsOpen!(true);
               } catch (_) {}
             });
           }
@@ -58,14 +58,14 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
             setState(() {
               scrolloffset = 0.0;
               try {
-                widget.drawerIsOpen(false);
+                widget.drawerIsOpen!(false);
               } catch (_) {}
             });
           }
           iconAnimationController.animateTo(1.0, duration: const Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
         }
       });
-    WidgetsBinding.instance.addPostFrameCallback((_) => getInitState());
+    WidgetsBinding.instance!.addPostFrameCallback((_) => getInitState());
     super.initState();
   }
 
@@ -96,12 +96,12 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
                 height: MediaQuery.of(context).size.height,
                 child: AnimatedBuilder(
                   animation: iconAnimationController,
-                  builder: (BuildContext context, Widget child) {
+                  builder: (BuildContext context, Widget? child) {
                     return Transform(
                       //transform we use for the stable drawer  we, not need to move with scroll view
                       transform: Matrix4.translationValues(scrollController.offset, 0.0, 0.0),
                       child: HomeDrawer(
-                        screenIndex: widget.screenIndex == null ? DrawerIndex.HOME : widget.screenIndex,
+                        screenIndex: widget.screenIndex,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {
                           onDrawerClick();
@@ -151,7 +151,7 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
                               borderRadius: BorderRadius.circular(AppBar().preferredSize.height),
                               child: Center(
                                 // if you use your own menu view UI you add form initialization
-                                child: widget.menuView != null ? widget.menuView : AnimatedIcon(icon: widget.animatedIconData != null ? widget.animatedIconData : AnimatedIcons.arrow_menu, progress: iconAnimationController),
+                                child: widget.menuView != null ? widget.menuView : AnimatedIcon(icon: widget.animatedIconData, progress: iconAnimationController),
                               ),
                               onTap: () {
                                 FocusScope.of(context).requestFocus(FocusNode());

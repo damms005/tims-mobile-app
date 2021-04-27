@@ -8,8 +8,8 @@ class CourseInfoScreen extends StatefulWidget {
 
 class _CourseInfoScreenState extends State<CourseInfoScreen> with TickerProviderStateMixin {
   final double infoHeight = 364.0;
-  AnimationController animationController;
-  Animation<double> animation;
+  late AnimationController animationController;
+  late Animation<double> animation;
   double opacity1 = 0.0;
   double opacity2 = 0.0;
   double opacity3 = 0.0;
@@ -50,7 +50,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen> with TickerProvider
               children: <Widget>[
                 AspectRatio(
                   aspectRatio: 1.2,
-                  child: Image.asset('assets/design_course/webInterFace.png'),
+                  child: Image.asset('assets/images/webInterFace.png'),
                 ),
               ],
             ),

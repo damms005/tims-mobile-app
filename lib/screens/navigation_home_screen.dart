@@ -1,9 +1,9 @@
+import 'package:iuo_mobile_app/screens/home_design_course.dart';
 import 'package:iuo_mobile_app/themes/app_theme.dart';
 import 'package:iuo_mobile_app/custom_drawer/drawer_user_controller.dart';
 import 'package:iuo_mobile_app/custom_drawer/home_drawer.dart';
 import 'package:iuo_mobile_app/screens/feedback_screen.dart';
 import 'package:iuo_mobile_app/screens/help_screen.dart';
-import 'package:iuo_mobile_app/screens/home_screen.dart';
 import 'package:iuo_mobile_app/screens/invite_friend_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,13 +13,11 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
-  Widget screenView;
-  DrawerIndex drawerIndex;
+  Widget screenView = DesignCourseHomeScreen();
+  DrawerIndex drawerIndex = DrawerIndex.HOME;
 
   @override
   void initState() {
-    drawerIndex = DrawerIndex.HOME;
-    screenView = const MyHomePage();
     super.initState();
   }
 
@@ -52,7 +50,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       drawerIndex = drawerIndexdata;
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = const MyHomePage();
+          screenView = DesignCourseHomeScreen();
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {

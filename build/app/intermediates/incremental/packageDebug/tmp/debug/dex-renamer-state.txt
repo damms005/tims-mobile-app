@@ -1,0 +1,4 @@
+#Tue Apr 27 07:19:54 WAT 2021
+base.0=/home/deo/Documents/Flutter/iuo_mobile_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

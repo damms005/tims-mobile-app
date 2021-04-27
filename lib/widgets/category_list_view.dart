@@ -4,7 +4,7 @@ import 'package:iuo_mobile_app/main.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatefulWidget {
-  const CategoryListView({Key key, this.callBack}) : super(key: key);
+  const CategoryListView({Key? key, required this.callBack}) : super(key: key);
 
   final Function callBack;
   @override
@@ -12,7 +12,7 @@ class CategoryListView extends StatefulWidget {
 }
 
 class _CategoryListViewState extends State<CategoryListView> with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _CategoryListViewState extends State<CategoryListView> with TickerProvider
 
   @override
   void dispose() {
-    animationController?.dispose();
+    animationController.dispose();
     super.dispose();
   }
 
@@ -72,18 +72,18 @@ class _CategoryListViewState extends State<CategoryListView> with TickerProvider
 }
 
 class CategoryView extends StatelessWidget {
-  const CategoryView({Key key, this.category, this.animationController, this.animation, this.callback}) : super(key: key);
+  const CategoryView({Key? key, required this.category, required this.animationController, required this.animation, required this.callback}) : super(key: key);
 
   final VoidCallback callback;
   final Category category;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
           child: Transform(
