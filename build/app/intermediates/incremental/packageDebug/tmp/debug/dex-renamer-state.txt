@@ -1,0 +1,4 @@
+#Mon Apr 26 15:42:58 WAT 2021
+base.0=/home/deo/Documents/Flutter/iuo_ui_template/best_flutter_ui_templates/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
