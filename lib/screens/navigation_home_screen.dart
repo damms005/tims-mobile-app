@@ -1,4 +1,4 @@
-import 'package:iuo_mobile_app/screens/home_design_course.dart';
+import 'package:iuo_mobile_app/screens/main_app_screen.dart';
 import 'package:iuo_mobile_app/themes/app_theme.dart';
 import 'package:iuo_mobile_app/custom_drawer/drawer_user_controller.dart';
 import 'package:iuo_mobile_app/custom_drawer/home_drawer.dart';
@@ -13,7 +13,7 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
-  Widget screenView = DesignCourseHomeScreen();
+  Widget screenView = MainAppScreen();
   DrawerIndex drawerIndex = DrawerIndex.HOME;
 
   @override
@@ -50,7 +50,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       drawerIndex = drawerIndexdata;
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = DesignCourseHomeScreen();
+          screenView = MainAppScreen();
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
